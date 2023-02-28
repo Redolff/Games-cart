@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './App.css';
-import getGames from './services/getGames';
 import ListOfGames from './components/ListOfGames';
+import { Route } from 'wouter'
 
-const App = () => {
-  
-  const [games, setGames] = useState([])
-  
-  useEffect(() => {
-    getGames().then(games => setGames(games))
-  }, [])
-  
+const App = () => { 
   return (
     <div className='container text-center'>
-      <ListOfGames
-        games={games}
+      <h1> App Games </h1>
+      <Route 
+        path='/games' 
+        component={ListOfGames} 
       />
     </div>
   );

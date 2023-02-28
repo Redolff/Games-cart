@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Games from './Games'
+import getGames from "../services/getGames";
 
-const ListOfGames = ({ games }) => {
+const ListOfGames = () => {
+
+    const [games, setGames] = useState([])
+  
+    useEffect(() => {
+        getGames().then(games => setGames(games))
+    }, [])
+
     return (
         <div className="row">
             {games.map(({ id, nombre, imagen, precio, stock, boton }) => 
