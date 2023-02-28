@@ -13,7 +13,7 @@ const App = () => {
   
   return (
     <div className='container text-center'>
-      <ListOfGames 
+      <ListOfGames
         games={games}
       />
     </div>
