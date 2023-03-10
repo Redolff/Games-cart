@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import Games from './Games'
+import Game from './Game'
 import getGames from "../services/getGames";
 
 const ListOfGames = () => {
@@ -29,7 +29,7 @@ const ListOfGames = () => {
             </form>
             <div className="row">
                 {results.map(({ id, nombre, imagen, precio, stock, boton }) => 
-                    <Games
+                    <Game
                         key={id} 
                         id={id}
                         nombre={nombre}
