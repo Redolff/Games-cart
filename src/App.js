@@ -5,7 +5,7 @@ import { Route } from 'wouter'
 
 const App = () => { 
   return (
-    <div className='container text-center'>
+    <div className='container-fluid'>
       <h1> App Games </h1>
       <Route 
         path='/games' 

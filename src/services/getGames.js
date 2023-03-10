@@ -15,8 +15,10 @@ const getGames = async () => {
     }
     catch(error){
         console.log(error)
-    }
+    }    
+}
 
+export default getGames
    /* return fetch(apiURL, {
         method: 'GET',
         headers: {'content-type' : 'application/json'},
@@ -29,6 +31,3 @@ const getGames = async () => {
     }).catch(error => {
         console.log(error)
     }) */
-}
-
-export default getGames
