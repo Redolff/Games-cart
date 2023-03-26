@@ -1,7 +1,6 @@
 const apiURL = 'https://60e0eb3e6b689e001788cc1d.mockapi.io/api/games'
 
 const getGames = async () => {
-   
     try{
         const response = await fetch(apiURL, {
             method: 'GET',

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import AllGames from "./AllGames";
+import Games from "./Games";
 
 const SearchGames = ({ games }) => {
 
     const [search, setSearch] = useState('')
-    const [searchPrice, setSearchPrice] = useState(0)
+    const [searchPrice, setSearchPrice] = useState('')
 
     const searcher = (e) => {
         setSearch(e.target.value)
@@ -30,8 +30,7 @@ const SearchGames = ({ games }) => {
                 <input value={searchPrice} onChange={searcherPrice} type='number' className="form-control" placeholder="Search price..."></input>
                 <input value={search} onChange={searcher} type='text' className="form-control" placeholder="Search..."/>
             </form>
-            <AllGames 
-                games={games}
+            <Games 
                 results={results}
             />
         </div>
