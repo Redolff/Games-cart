@@ -1,9 +1,6 @@
 import React from "react";
-import useCart from "../hooks/useCart";
 
-const CartList = () => {
-
-    const [carro] = useCart([])
+const CartList = ({ carro }) => {
 
     return (
         <div className="cart-list">

@@ -3,32 +3,30 @@ import Games from "./Games";
 
 const SearchGames = ({ games }) => {
 
-    const [search, setSearch] = useState('')
-    const [searchPrice, setSearchPrice] = useState('')
+    const [search, setSearch] = useState({ price: '', texto: '' })
 
     const searcher = (e) => {
-        setSearch(e.target.value)
+        setSearch({ 
+            ...search,
+            [e.target.name]: e.target.value, 
+        })
     }
 
-    const searcherPrice = (e) => {
-        setSearchPrice(e.target.value)
-    }
-
-    let results = []
-    if(searchPrice){
-        results = games.filter((game) => game.precio <= searchPrice)
+    let results = [] 
+    if(search.price){
+        results = games.filter((game) => game.precio <= search.price)
         if(results.length > 0){
-            results = results.filter((result) => result.nombre.toLowerCase().includes(search.toLocaleLowerCase()))
+            results = results.filter((result) => result.nombre.toLowerCase().includes((search.texto).toLocaleLowerCase()))
         }
     }else{
         results = games
-    }
+    } 
     
     return (
         <div>
+                <input name="price" value={search.price} onChange={searcher} type='number' className="form-control" placeholder="Search price..."></input>
             <form className="search">
-                <input value={searchPrice} onChange={searcherPrice} type='number' className="form-control" placeholder="Search price..."></input>
-                <input value={search} onChange={searcher} type='text' className="form-control" placeholder="Search..."/>
+                <input name="texto" value={search.texto} onChange={searcher} type='text' className="form-control" placeholder="Search game..."/>
             </form>
             <Games 
                 results={results}

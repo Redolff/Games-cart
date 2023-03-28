@@ -1,11 +1,8 @@
 import React from "react";
-import useCart from "../hooks/useCart";
 import Game from "./Game";
 
-const Games = ({ results }) => {
-    
-    const [carro, addToCart] = useCart([])
-    
+const Games = ({ results, addToCart }) => {
+        
     return (
         <div className="row">
             {results.map((game => 
@@ -13,7 +10,6 @@ const Games = ({ results }) => {
                     addToCart={addToCart}
                     key={game.id}
                     game={game}
-                    carro={carro}
                 />
             ))} 
         </div>
