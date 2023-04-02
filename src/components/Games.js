@@ -1,19 +1,16 @@
 import React from "react";
 import Game from "./Game";
+import useCart from "../hooks/useCart";
 
-const Games = ({ results, addToCart }) => {
-        
-    return (
-        <div className="row">
-            {results.map((game => 
-                <Game
-                    addToCart={addToCart}
-                    key={game.id}
-                    game={game}
-                />
-            ))} 
-        </div>
-    )
-}
+const Games = ({ results }) => {
+  const [, addToCart] = useCart();
+  return (
+    <div className="row">
+      {results.map((game) => (
+        <Game game={game} addToCart={addToCart} key={game.id} />
+      ))}
+    </div>
+  );
+};
 
-export default Games
+export default Games;
