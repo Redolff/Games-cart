@@ -11,7 +11,7 @@ const BubbleAlert = ({ value }) => {
     }
 
     return (
-        <span>
+        <span className="bubbleAlert">
             {getNumber(cantidad)}
         </span>
     )

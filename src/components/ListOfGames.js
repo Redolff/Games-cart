@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import SearchGames from "./SearchGames";
 import getGames from "../services/getGames";
 
-const ListOfGames = () => {
+const ListOfGames = ({ addToCart }) => {
+
   const [games, setGames] = useState([]);
 
   useEffect(() => {
@@ -11,7 +12,10 @@ const ListOfGames = () => {
 
   return (
     <div className="container text-center">
-      <SearchGames games={games} />
+      <SearchGames 
+        games={games} 
+        addToCart={addToCart}  
+      />
     </div>
   );
 };

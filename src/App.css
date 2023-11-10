@@ -6,6 +6,10 @@
   border-radius: 20px;
 }
 
+.card{
+  position: relative;
+}
+
 .search{
   padding: 10px;
 }
@@ -22,27 +26,36 @@ h1{
   position: relative;
   left: 12px;
   top: 20px;
-  background-color: #E9275A;
+}
+
+.bubbleAlert{
+  background-color: #ff2a00;
   border-radius: 15px;
-  color: white;
+  color: #fff;
   padding: 2px 10px;
   font-size: 0.9rem;
   width: 20px;
 }
 
-.cart-list{
+.carro{
+  color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.detallesCarro{
   background-color: #fff;
   position: absolute;
-  margin-left: 20px;
-  margin-top: 10px;
+  margin-top: 30;
   box-shadow: 1px 5px 5px rgb(0,0,0,0.3);
   border-radius: 5px;
   width: 300px;
+  margin-top: 15px;
   right: 0;
-}
-
-h5{
   color: black;
+  border: 1px solid rgb(0,0,0,0.1);
+  z-index: 100;
 }
 
 .cart-ul{
@@ -50,8 +63,12 @@ h5{
   padding: 0;
 }
 
-.cart-li{
-  list-style: none;
+h5{
+  color: black;
+}
+
+.cart-producto{
+  list-style-type: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
