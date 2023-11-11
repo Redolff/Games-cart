@@ -27,15 +27,33 @@ const useCart = () => {
     setCantidad(cantidad + 1)
   }
   
-  const mostrarCarro = () => {
+  const showCart = () => {
     if(!carro.length){
       return 
     }
     setCarroVisible(!esCarroVisible)
   }
   
-  return [carro, addToCart, esCarroVisible, mostrarCarro]; 
+  const deleteProduct = (id) => {
+    const product = carro.find((x) => x.id === id)
+    if(product.cantidad > 1){
+      const newCart = carro.map((x) => x.id === id
+      ? ({
+          ...x,
+          cantidad: x.cantidad - 1,
+        })
+      : x
+      ) 
+      setCarro(newCart)
+    }else{
+      const newCart = carro.filter((x) => x.id !== id)
+      setCarro(newCart)
+    }
+  }
 
+  return [carro, addToCart, esCarroVisible, showCart, deleteProduct]; 
 }
+
+
 
 export default useCart 

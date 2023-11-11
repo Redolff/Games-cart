@@ -3,7 +3,7 @@ import BubbleAlert from "./BubbleAlert";
 import CartList from "./CartList";
 //import useCart from "../hooks/useCart";
 
-const ShopCart = ({ carro, esCarroVisible, mostrarCarro }) => {
+const ShopCart = ({ carro, esCarroVisible, showCart, deleteProduct }) => {
 
   const cantidad = carro.reduce((acc, el) => acc + el.cantidad, 0);
 
@@ -15,11 +15,14 @@ const ShopCart = ({ carro, esCarroVisible, mostrarCarro }) => {
           : null
         }
       </span>
-      <button onClick={mostrarCarro} className="btn btn-primary carro">
+      <button onClick={showCart} className="btn btn-primary carro">
         Shop Cart
       </button>
       {esCarroVisible
-        ? <CartList carro={carro} />
+        ? <CartList 
+            carro={carro} 
+            deleteProduct={deleteProduct}
+          />
         : null
       }
     </div>

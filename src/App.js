@@ -6,7 +6,7 @@ import useCart from "./hooks/useCart";
 
 const App = () => {
 
-  const [ carro, addToCart, esCarroVisible, mostrarCarro ] = useCart()
+  const [ carro, addToCart, esCarroVisible, showCart, deleteProduct ] = useCart()
 
   return (
     <div>
@@ -15,7 +15,8 @@ const App = () => {
         <ShopCart 
           carro={carro} 
           esCarroVisible={esCarroVisible} 
-          mostrarCarro={mostrarCarro}
+          showCart={showCart}
+          deleteProduct={deleteProduct}
         />
       </nav>
       <div className="container text-center">

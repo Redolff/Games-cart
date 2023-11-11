@@ -13,7 +13,7 @@ const Game = ({ game, addToCart }) => {
         width="300"
       />
       <h5> ${game.precio} </h5>
-      <button onClick={() => addToCart(game)}> 
+      <button className='btn btn-success' onClick={() => addToCart(game)}> 
         Add to cart 
       </button>
     </div>
